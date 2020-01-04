@@ -18,17 +18,13 @@
 <script type="text/javascript">
 document.write("<p>UserAgent: "+navigator.userAgent + "</p>")
 var ua=navigator.userAgent
-if(ua.match(/ MicroMessenger\/ /)==" MicroMessenger/"){
-    document.write("weixin")
-}
-else if (ua.match(/ QQ\//)==" QQ/"){
-    document.write("QQ")
-}
+if(ua.search(" MicroMessenger/")>-1)document.write("weixin")
+else if (ua.search(" QQ/")>-1)document.write("QQ")
+else if(ua.search("AlipayClient")>-1)document.write("alipay")
 document.write(window.location.search.substr(1).split("&"))
 
 // 
-// "AlipayClient"
-// "QQ"
+// ""
 // function getQueryVariable(variable)
 // {
 //        var query = window.location.search.substring(1);
