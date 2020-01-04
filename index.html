@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <style>
-        html{
+        html {
             max-width: 100vh;
             margin: auto;
         }
@@ -12,16 +13,25 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
 <body>
 
 
-<script type="text/javascript">
-document.write("<img src=\"")
-var ua=navigator.userAgent
-if(ua.search(" MicroMessenger/")>-1)location.href="/img/open/微信支付.png"
-else if (ua.search(" QQ/")>-1)location.href="/"
-else if(ua.search("AlipayClient")>-1)location.href="/img/open/支付宝支付.jpg"
-document.write("\">")
+    <script type="text/javascript">
+        // 返回支付码
+        function paycode(code) {
+            let ua = navigator.userAgent
+            for (i in code) {
+                if (ua.search(" " + i + "/") > -1) return code[i]
+            }
+            return "/"
+        }
+        code = {
+            'MicroMessenger': '/img/open/微信支付.png',
+            'AlipayClient': '/img/open/支付宝支付.jpg',
+            'QQ': '/img/open/'
+        }
+        document.write(`<img src="${paycode(code)}" alt="">`)
 // document.write(window.location.search.substr(1).split("&"))
 
 // document.write("<p>UserAgent: "+navigator.userAgent + "</p>")
@@ -37,7 +47,9 @@ document.write("\">")
 //        }
 //        return(false);
 // }
-</script>
-<p>技术支持：博德工作室</p>
+    </script>
+    
+    <p>技术支持：博德工作室</p>
 </body>
+
 </html>
