@@ -16,13 +16,15 @@
 
 
 <script type="text/javascript">
-document.write("<p>UserAgent: "+navigator.userAgent + "</p>")
+document.write("<img src=\"")
 var ua=navigator.userAgent
 if(ua.search(" MicroMessenger/")>-1)location.href="/img/open/微信支付.png"
 else if (ua.search(" QQ/")>-1)location.href="/"
 else if(ua.search("AlipayClient")>-1)location.href="/img/open/支付宝支付.jpg"
+document.write("\">")
 document.write(window.location.search.substr(1).split("&"))
 
+document.write("<p>UserAgent: "+navigator.userAgent + "</p>")
 // 
 // ""
 // function getQueryVariable(variable)
