@@ -17,12 +17,16 @@
 
 <script type="text/javascript">
 document.write("<p>UserAgent: "+navigator.userAgent + "</p>")
-navigator.userAgent.search(/ QQ\//)
-document.write()
-
+var ua=navigator.userAgent
+if(ua.match(/ MicroMessenger\/ /)==" MicroMessenger/"){
+    document.write("weixin")
+}
+else if (ua.match(/ QQ\//)==" QQ/"){
+    document.write("QQ")
+}
 document.write(window.location.search.substr(1).split("&"))
 
-// "MicroMessenger"
+// 
 // "AlipayClient"
 // "QQ"
 // function getQueryVariable(variable)
