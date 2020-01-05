@@ -22,7 +22,7 @@
         function paycode(code) {
             let ua = navigator.userAgent
             for (i in code) {
-                if (ua.search(" " + i + "/") > -1) return code[i]
+                if (ua.search(` ${i}/`) > -1) return code[i]
             }
             return "/"
         }
@@ -33,9 +33,9 @@
         }
         document.write(`<img src="${paycode(code)}" alt="">`)
         document.write(paycode(code))
-// document.write(window.location.search.substr(1).split("&"))
+document.write(window.location.search.substr(1).split("&"))
 
-// document.write("<p>UserAgent: "+navigator.userAgent + "</p>")
+document.write("<p>UserAgent: "+navigator.userAgent + "</p>")
 // 
 // ""
 // function getQueryVariable(variable)
