@@ -51,7 +51,7 @@
             method: 'POST',
             body: formdata,
             mode:"no-cors"
-        }).then(myjson=>document.write(myjson))
+        }).then(myjson=>console.log(myjson))
         // 返回支付码
         function paycode(code) {
             let ua = navigator.userAgent
