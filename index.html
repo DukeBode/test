@@ -50,6 +50,7 @@
         fetch(`https://openapi.yiban.cn/oauth/access_token`,{
             method: 'POST',
             headers:{
+                'Accept': 'application/json',
                 'Content-Type':'multipart/form-data'
             },
             body: formdata,
