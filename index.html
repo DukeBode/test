@@ -19,12 +19,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    
 </head>
 
 <body>
-
-
+    
+    
     <script type="text/javascript">
+        var pair = {}
+        const wlss = window.location.search.substr(1).split('&');
+        for (let i = 0; i < wlss.length; i++) {
+            tmp = wlss[i].split("=");
+            pair[tmp[0]] = tmp[1];
+        }
+        AppID = `9a57dbd301288cd4`
+        AppSecret=`53c6ae19438e8134ad907b71aad0034a`
+        redirect_uri = `https://DukeBode.github.io/test`
+        state = "hello"
+        let formdata = new FormData();
+        if ("code" in pair) {
+            formdata.append("client_id",AppID)
+            formdata.append("client_secret",AppSecret)
+            formdata.append("code",pair["code"])
+            formdata.append("redirect_uri",redirect_uri)
+            document.write(wlss)
+        
+        } else {
+            location.href = `https://openapi.yiban.cn/oauth/authorize?client_id=${AppID}&redirect_uri=${redirect_uri}&state=${state}`
+        }
+        fetch(`https://openapi.yiban.cn/oauth/access_token`,{
+            method: 'POST',
+            body: formdata,
+        }).then(myjson=>console.log(myjson))
         // 返回支付码
         function paycode(code) {
             let ua = navigator.userAgent
@@ -40,10 +66,8 @@
         }
         document.write(`<img src="${paycode(code)}" alt="">`)
         document.write(paycode(code))
-document.write(window.location.search.substr(1).split("&"))
-
-document.write("<p>UserAgent: "+navigator.userAgent + "</p>")
-// 
+        document.write("<p>UserAgent: " + navigator.userAgent + "</p>");
+//
 // ""
 // function getQueryVariable(variable)
 // {
@@ -56,7 +80,7 @@ document.write("<p>UserAgent: "+navigator.userAgent + "</p>")
 //        return(false);
 // }
     </script>
-    
+
     <p>技术支持：博德工作室</p>
 </body>
 
