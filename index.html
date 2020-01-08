@@ -52,8 +52,8 @@
             body: formdata,
             mode:"no-cors"
         })
-        .then(response=>response.json())
-        .then(myjson=>console.log(myjson))
+        .then(res => res.json())
+        .then(myjson => console.log(myjson))
         // 返回支付码
         function paycode(code) {
             let ua = navigator.userAgent
