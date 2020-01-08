@@ -49,6 +49,9 @@
         }
         fetch(`https://openapi.yiban.cn/oauth/access_token`,{
             method: 'POST',
+            headers:{
+                'Content-Type':'application/x-www-form-urlencoded'
+            },
             body: formdata,
             mode:"no-cors"
         })
