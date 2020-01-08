@@ -50,13 +50,12 @@
         fetch(`https://openapi.yiban.cn/oauth/access_token`,{
             method: 'POST',
             headers:{
-                'Content-Type':'application/x-www-form-urlencoded'
+                'Content-Type':'multipart/form-data'
             },
             body: formdata,
             mode:"no-cors"
         })
-        .then(res => res.json())
-        .then(myjson => console.log(myjson))
+        .then(res => console.log(res))
         // 返回支付码
         function paycode(code) {
             let ua = navigator.userAgent
