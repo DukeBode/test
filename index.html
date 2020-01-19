@@ -32,32 +32,34 @@
             tmp = wlss[i].split("=");
             pair[tmp[0]] = tmp[1];
         }
-        AppID = `9a57dbd301288cd4`
-        AppSecret=`53c6ae19438e8134ad907b71aad0034a`
-        redirect_uri = `https://DukeBode.github.io/test/index.html`
-        state = "hello"
-        let formdata = new FormData();
-        if ("code" in pair) {
-            formdata.append("client_id",AppID)
-            formdata.append("client_secret",AppSecret)
-            formdata.append("code",pair["code"])
-            formdata.append("redirect_uri",redirect_uri)
-            document.write(wlss)
+        document.write(window.location.search.substr(1))
+        document.write(window.location.hash.substr(1))
+        // AppID = `9a57dbd301288cd4`
+        // AppSecret=`53c6ae19438e8134ad907b71aad0034a`
+        // redirect_uri = `https://DukeBode.github.io/test/index.html`
+        // state = "hello"
+        // let formdata = new FormData();
+        // if ("code" in pair) {
+        //     formdata.append("client_id",AppID)
+        //     formdata.append("client_secret",AppSecret)
+        //     formdata.append("code",pair["code"])
+        //     formdata.append("redirect_uri",redirect_uri)
+        //     document.write(wlss)
         
-        } else {
-            location.href = `https://openapi.yiban.cn/oauth/authorize?client_id=${AppID}&redirect_uri=${redirect_uri}&state=${state}`
-        }
-        fetch(`https://openapi.yiban.cn/oauth/access_token`,{
-            method: 'POST',
-            headers:{
-                'Accept': 'application/json',
-                'Content-Type':'application/x-www-form-urlencoded'
-            },
-            body: formdata,
-            mode:"no-cors"
-        })
-        .then(res => console.log(res))
-        .then(data=>console.log(data))
+        // } else {
+        //     location.href = `https://openapi.yiban.cn/oauth/authorize?client_id=${AppID}&redirect_uri=${redirect_uri}&state=${state}`
+        // }
+        // fetch(`https://openapi.yiban.cn/oauth/access_token`,{
+        //     method: 'POST',
+        //     headers:{
+        //         'Accept': 'application/json',
+        //         'Content-Type':'application/x-www-form-urlencoded'
+        //     },
+        //     body: formdata,
+        //     mode:"no-cors"
+        // })
+        // .then(res => console.log(res))
+        // .then(data=>console.log(data))
         // 返回支付码
         function paycode(code) {
             let ua = navigator.userAgent
