@@ -1,0 +1,27 @@
+Arguments: 
+  D:\Programs\node-v12.13.1-win-x64\node.exe D:\Program Files (x86)\Yarn\bin\yarn.js add taro
+
+PATH: 
+  C:\Program Files (x86)\Common Files\Oracle\Java\javapath;D:\Programs\Python\Python38\Scripts\;D:\Programs\Python\Python38\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;D:\Program Files (x86)\Yarn\bin\;C:\Program Files\dotnet\;C:\Users\DukeBode\AppData\Local\Microsoft\WindowsApps;D:\Programs\MinGit-2.24.0-64-bit\cmd;D:\Programs\node-v12.13.1-win-x64;E:\DukePath;C:\Users\DukeBode\.dotnet\tools;D:\Programs\Java\jdk-13\bin;D:\Programs\Microsoft VS Code\bin;D:\Programs\gradle\gradle-6.0.1\bin;C:\Users\DukeBode\AppData\Local\Yarn\bin
+
+Yarn version: 
+  1.21.1
+
+Node version: 
+  12.13.1
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: getaddrinfo ENOTFOUND mirrors.huaweicloud.com
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:60:26)
+
+npm manifest: 
+  No manifest
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
